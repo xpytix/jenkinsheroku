@@ -21,9 +21,9 @@ class JenkinsherokuApplicationTests {
 
     @Test
     void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/"))
+        this.mockMvc.perform(get("/simple"))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().is(200))
                 .andExpect((ResultMatcher) content().string("Hello Jenkins"));
     }
 
